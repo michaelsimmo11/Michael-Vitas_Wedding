@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael &amp; Vita — Winter Wedding at St Mary's Guildhall</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            900: '#0F382C', // Deep Winter Emerald Green
+                            800: '#154a3b',
+                            700: '#1d6350',
+                            100: '#e6f0ed',
+                        },
+                        burgundy: {
+                            950: '#3d0c15',
+                            900: '#5C1323', // Rich Winter Burgundy
+                            800: '#7a1c30',
+                            100: '#f9eaed',
+                        },
+                        gold: {
+                            200: '#F3E5AB',
+                            300: '#E5D08F',
+                            400: '#D4AF37', // Warm Champagne Gold Accent
+                            500: '#C5A059',
+                            600: '#AA8236',
+                        },
+                        cream: '#FDFBF7', // Soft Cream background
+                        charcoal: '#1E2421',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        script: ['Alex Brush', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ==========================================================================
+           WINTER WEDDING CUSTOM STYLESHEET
+           (You can copy this block directly into a 'style.css' file if preferred)
+           ========================================================================== */
+
+        :root {
+            --color-emerald-deep: #0F382C;
+            --color-burgundy: #5C1323;
+            --color-gold: #D4AF37;
+            --color-cream: #FDFBF7;
+            --color-text-dark: #1E2421;
+        }
+
+        body {
+            background-color: var(--color-cream);
+            color: var(--color-text-dark);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Hero Background with Dark Overlay */
+        .winter-hero-bg {
+            background-image: linear-gradient(to bottom, rgba(15, 56, 44, 0.75), rgba(61, 12, 21, 0.85)), 
+                              url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism Header */
+        .glass-header {
+            background: rgba(253, 251, 247, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Active Navigation Link Highlight */
+        .nav-link.active {
+            color: #C5A059;
+            font-weight: 600;
+        }
+        .nav-link.active::after {
+            content: '';
+            display: block;
+            width: 70%;
+            height: 2px;
+            background-color: #D4AF37;
+            margin: 2px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0F382C;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5C1323;
+        }
+
+        /* Gold Sparkle Decorative Divider */
+        .gold-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            width: 140px;
+            margin: 1rem auto;
+        }
+
+        /* Hide details summary default arrow */
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="relative antialiased selection:bg-gold-200 selection:text-emerald-900">
+
+    <!-- Sticky Navigation Bar -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-header border-b border-gold-400/20 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Couple Monogram / Logo -->
+                <a href="#hero" class="group flex items-center gap-2 text-2xl font-serif font-bold tracking-wider text-emerald-900 hover:text-gold-500 transition-colors">
+                    <span class="text-3xl font-script text-gold-500 group-hover:scale-110 transition-transform">M</span>
+                    <span class="text-xs text-burgundy-900 self-center uppercase font-sans tracking-widest">&amp;</span>
+                    <span class="text-3xl font-script text-gold-500 group-hover:scale-110 transition-transform">V</span>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-7 text-xs font-semibold tracking-widest uppercase text-emerald-900">
+                    <a href="#hero" class="nav-link hover:text-gold-500 transition-colors py-1">Home</a>
+                    <a href="#story" class="nav-link hover:text-gold-500 transition-colors py-1">Our Story</a>
+                    <a href="#details" class="nav-link hover:text-gold-500 transition-colors py-1">The Venue</a>
+                    <a href="#schedule" class="nav-link hover:text-gold-500 transition-colors py-1">Schedule</a>
+                    <a href="#travel" class="nav-link hover:text-gold-500 transition-colors py-1">Travel &amp; Stay</a>
+                    <a href="#registry" class="nav-link hover:text-gold-500 transition-colors py-1">Gifts</a>
+                    <a href="#faq" class="nav-link hover:text-gold-500 transition-colors py-1">FAQ</a>
+                </nav>
+
+                <!-- Desktop Header Action Button -->
+                <div class="hidden md:block">
+                    <a href="#rsvp" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase bg-burgundy-900 text-white hover:bg-emerald-900 transition-all shadow-md hover:-translate-y-0.5 border border-gold-400/30">
+                        <i class="fa-solid fa-snowflake mr-2 text-gold-300"></i> RSVP
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" type="button" class="md:hidden p-2 text-emerald-900 hover:text-gold-500 focus:outline-none" aria-label="Toggle Mobile Menu">
+                    <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-gold-400/30 px-6 pt-3 pb-6 space-y-3 text-center shadow-xl">
+            <a href="#hero" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Home</a>
+            <a href="#story" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Our Story</a>
+            <a href="#details" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">The Venue</a>
+            <a href="#schedule" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Schedule</a>
+            <a href="#travel" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Travel &amp; Hotels</a>
+            <a href="#registry" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Gift Registry</a>
+            <a href="#faq" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">FAQ</a>
+            <a href="#rsvp" class="mobile-nav-item block mt-4 py-3 bg-burgundy-900 text-white rounded-full font-bold uppercase text-xs tracking-widest shadow">RSVP Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center winter-hero-bg pt-24 pb-16 px-4 text-white text-center">
+        <div class="relative z-10 max-w-4xl mx-auto space-y-6">
+            <!-- Winter Accent Subtitle -->
+            <div class="flex items-center justify-center gap-2 text-gold-300 font-script text-3xl sm:text-4xl">
+                <span>Winter Wedding Celebration</span>
+            </div>
+
+            <!-- Couple Names -->
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-serif font-light tracking-wide leading-tight">
+                Michael Simmons <br class="hidden sm:inline">
+                <span class="font-script text-gold-400 text-5xl sm:text-7xl md:text-9xl font-normal">&amp;</span><br class="hidden sm:inline">
+                Vita Grigaraviciute
+            </h1>
+
+            <!-- Decorative Gold Line -->
+            <div class="gold-divider"></div>
+
+            <!-- Wedding Date & Venue Location -->
+            <p class="text-base sm:text-xl font-light tracking-widest uppercase text-cream/90 max-w-2xl mx-auto">
+                Saturday, 12th December 2027<br>
+                <span class="text-gold-300 font-normal">St Mary's Guildhall • Coventry, UK</span>
+            </p>
+
+            <!-- Live Countdown Timer Component -->
+            <div class="pt-6 pb-4">
+                <p class="text-xs uppercase tracking-widest text-gold-300 mb-4 font-bold">Counting Down To Our Winter Wedding</p>
+                <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
+                    <div class="bg-emerald-900/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-gold-400/40 shadow-lg">
+                        <span id="timer-days" class="block text-2xl sm:text-4xl font-serif font-bold text-white">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gold-200">Days</span>
+                    </div>
+                    <div class="bg-emerald-900/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-gold-400/40 shadow-lg">
+                        <span id="timer-hours" class="block text-2xl sm:text-4xl font-serif font-bold text-white">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gold-200">Hours</span>
+                    </div>
+                    <div class="bg-emerald-900/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-gold-400/40 shadow-lg">
+                        <span id="timer-minutes" class="block text-2xl sm:text-4xl font-serif font-bold text-white">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gold-200">Mins</span>
+                    </div>
+                    <div class="bg-emerald-900/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-gold-400/40 shadow-lg">
+                        <span id="timer-seconds" class="block text-2xl sm:text-4xl font-serif font-bold text-white">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gold-200">Secs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Actions -->
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#rsvp" class="w-full sm:w-auto px-9 py-4 bg-gold-400 hover:bg-gold-500 text-emerald-900 font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow-lg hover:-translate-y-0.5">
+                    RSVP For Wedding
+                </a>
+                <button onclick="addToCalendar()" class="w-full sm:w-auto px-7 py-4 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/30 font-semibold rounded-full uppercase text-xs tracking-widest transition-all flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-calendar-check text-gold-300"></i> Add To Calendar
+                </button>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#story" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-gold-300 hover:text-white animate-bounce transition-colors" aria-label="Scroll to Our Story">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </a>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-burgundy-900 font-script text-3xl">A Coventry Love Story</span>
+            <h2 class="text-4xl sm:text-5xl font-serif font-normal text-emerald-900 mt-1">Our Journey Together</h2>
+            <div class="gold-divider"></div>
+            <p class="text-emerald-900/80 text-sm sm:text-base leading-relaxed">
+                From a memorable night out in Coventry a decade ago to building a family and life together, here is our story.
+            </p>
+        </div>
+
+        <!-- Story Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <!-- 2016 Kasbah -->
+            <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/20 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop" alt="Kasbah Coventry Memories" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=Kasbah+2016'">
+                        <span class="absolute top-3 left-3 bg-burgundy-900 text-gold-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">2016</span>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-emerald-900 mb-2">Met at Kasbah</h3>
+                    <p class="text-emerald-900/80 text-xs leading-relaxed">
+                        10 years ago, our paths crossed on a lively night out at Coventry Kasbah. What started as an unexpected chat turned into instant chemistry and an unforgettable connection.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2018 Official Journey -->
+            <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/20 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
+                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600&auto=format&fit=crop" alt="8 Years Together" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=8+Years+Love'">
+                        <span class="absolute top-3 left-3 bg-emerald-900 text-gold-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">8 Years Strong</span>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-emerald-900 mb-2">Building Our Life</h3>
+                    <p class="text-emerald-900/80 text-xs leading-relaxed">
+                        Over the past 8 years together, we've supported each other's dreams, traveled, laughed through every season, and built a happy home grounded in unconditional love.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Our Two Kids -->
+            <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/20 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600&auto=format&fit=crop" alt="Family and Two Kids" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=Our+Family'">
+                        <span class="absolute top-3 left-3 bg-burgundy-900 text-gold-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Our Family</span>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-emerald-900 mb-2">Our Two Children</h3>
+                    <p class="text-emerald-900/80 text-xs leading-relaxed">
+                        Our greatest blessing has been becoming parents to our two wonderful kids. They fill our everyday life with endless joy, energy, and love.
+                    </p>
+                </div>
+            </div>
+
+            <!-- December 2027 -->
+            <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/20 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop" alt="St Mary's Guildhall Wedding" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=Dec+2027'">
+                        <span class="absolute top-3 left-3 bg-emerald-900 text-gold-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Dec 2027</span>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-emerald-900 mb-2">Tying The Knot</h3>
+                    <p class="text-emerald-900/80 text-xs leading-relaxed">
+                        Now, surrounded by our children, family, and closest friends, we can't wait to make it official in the historic Great Hall at St Mary's Guildhall!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue & Location Section -->
+    <section id="details" class="py-24 bg-emerald-900 text-white px-4 sm:px-6 lg:px-8 border-y border-gold-400/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-gold-300 font-script text-3xl">Historic Setting</span>
+                <h2 class="text-4xl sm:text-5xl font-serif font-normal text-white mt-1">St Mary's Guildhall</h2>
+                <div class="gold-divider"></div>
+                <p class="text-cream/80 text-sm sm:text-base">
+                    Located in the heart of historic Coventry, St Mary's Guildhall is one of the finest surviving medieval guildhalls in the UK, offering an enchanting winter backdrop.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <!-- Venue Information Card -->
+                <div class="bg-white/10 backdrop-blur-md p-8 sm:p-10 rounded-3xl border border-gold-400/30 space-y-6">
+                    <div class="flex items-center gap-4 border-b border-gold-400/20 pb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gold-400/20 text-gold-300 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-white">St Mary's Guildhall</h3>
+                            <p class="text-gold-300 text-xs uppercase tracking-wider">Bayley Lane, Coventry CV1 5RN</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 text-sm text-cream/90">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-clock text-gold-400 mt-1"></i>
+                            <div>
+                                <strong class="block text-white">Ceremony Start:</strong>
+                                <span>2:00 PM (Please arrive by 1:30 PM for guest seating)</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-square-parking text-gold-400 mt-1"></i>
+                            <div>
+                                <strong class="block text-white">Parking:</strong>
+                                <span>Salt Lane Car Park (CV1 2GY) &amp; Cox Street Car Park are a 3-minute walk away.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-vest text-gold-400 mt-1"></i>
+                            <div>
+                                <strong class="block text-white">Dress Code:</strong>
+                                <span>Winter Formal / Cocktail Attire</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="pt-4">
+                        <a href="https://maps.google.com/?q=St+Marys+Guildhall+Coventry+Bayley+Lane" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-gold-400 hover:bg-gold-500 text-emerald-900 font-bold rounded-full text-xs uppercase tracking-widest transition-all">
+                            <i class="fa-solid fa-map-location-dot"></i> Open Location in Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Venue Visual Preview -->
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-gold-400/30 h-80 lg:h-full min-h-[320px]">
+                    <img src="https://images.unsplash.com/photo-1545232979-fbf34fe37b38?q=80&w=1000&auto=format&fit=crop" alt="St Mary's Guildhall Hall" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f382c/ffffff?text=St+Marys+Guildhall'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-xs text-gold-200 uppercase tracking-widest font-semibold"><i class="fa-solid fa-snowflake mr-1"></i> The Great Hall &amp; Tales of Coventry History</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-burgundy-900 font-script text-3xl">Order of the Day</span>
+            <h2 class="text-4xl sm:text-5xl font-serif font-normal text-emerald-900 mt-1">Wedding Day Schedule</h2>
+            <div class="gold-divider"></div>
+            <p class="text-emerald-900/80 text-sm sm:text-base">
+                Saturday, 12th December 2027 — Here is what we have planned for our celebration.
+            </p>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="relative border-l-2 border-gold-400/60 ml-4 sm:ml-32 space-y-10 py-4">
+            <!-- 1:30 PM -->
+            <div class="relative pl-8 sm:pl-10 group">
+                <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-cream border-2 border-gold-400 flex items-center justify-center text-burgundy-900 text-xs shadow-sm group-hover:bg-gold-400 transition-colors">
+                    <i class="fa-solid fa-door-open"></i>
+                </div>
+                <div class="sm:absolute sm:-left-36 sm:top-1 sm:text-right w-28 text-xs font-bold uppercase tracking-widest text-burgundy-900 mb-1 sm:mb-0">
+                    1:30 PM
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-gold-400/20">
+                    <h3 class="text-xl font-serif font-bold text-emerald-900">Guest Arrival</h3>
+                    <p class="text-emerald-900/80 text-sm mt-1">Welcome arriving guests into St Mary's Guildhall.</p>
+                </div>
+            </div>
+
+            <!-- 2:00 PM -->
+            <div class="relative pl-8 sm:pl-10 group">
+                <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-cream border-2 border-gold-400 flex items-center justify-center text-burgundy-900 text-xs shadow-sm group-hover:bg-gold-400 transition-colors">
+                    <i class="fa-solid fa-ring"></i>
+                </div>
+                <div class="sm:absolute sm:-left-36 sm:top-1 sm:text-right w-28 text-xs font-bold uppercase tracking-widest text-burgundy-900 mb-1 sm:mb-0">
+                    2:00 PM
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-gold-400/20">
+                    <h3 class="text-xl font-serif font-bold text-emerald-900">The Marriage Ceremony</h3>
+                    <p class="text-emerald-900/80 text-sm mt-1">Exchanging vows in the historic Great Hall.</p>
+                </div>
+            </div>
+
+            <!-- 3:00 PM -->
+            <div class="relative pl-8 sm:pl-10 group">
+                <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-cream border-2 border-gold-400 flex items-center justify-center text-burgundy-900 text-xs shadow-sm group-hover:bg-gold-400 transition-colors">
+                    <i class="fa-solid fa-wine-glass"></i>
+                </div>
+                <div class="sm:absolute sm:-left-36 sm:top-1 sm:text-right w-28 text-xs font-bold uppercase tracking-widest text-burgundy-900 mb-1 sm:mb-0">
+                    3:00 PM
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-gold-400/20">
+                    <h3 class="text-xl font-serif font-bold text-emerald-900">Drinks &amp; Canapés Reception</h3>
+                    <p class="text-emerald-900/80 text-sm mt-1">Mulled wine, prosecco, seasonal canapés &amp; group photos.</p>
+                </div>
+            </div>
+
+            <!-- 5:00 PM -->
+            <div class="relative pl-8 sm:pl-10 group">
+                <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-cream border-2 border-gold-400 flex items-center justify-center text-burgundy-900 text-xs shadow-sm group-hover:bg-gold-400 transition-colors">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div class="sm:absolute sm:-left-36 sm:top-1 sm:text-right w-28 text-xs font-bold uppercase tracking-widest text-burgundy-900 mb-1 sm:mb-0">
+                    5:00 PM
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-gold-400/20">
+                    <h3 class="text-xl font-serif font-bold text-emerald-900">Speeches &amp; Wedding Breakfast</h3>
+                    <p class="text-emerald-900/80 text-sm mt-1">A delicious three-course winter meal followed by toasts.</p>
+                </div>
+            </div>
+
+            <!-- 7:30 PM -->
+            <div class="relative pl-8 sm:pl-10 group">
+                <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-cream border-2 border-gold-400 flex items-center justify-center text-burgundy-900 text-xs shadow-sm group-hover:bg-gold-400 transition-colors">
+                    <i class="fa-solid fa-music"></i>
+                </div>
+                <div class="sm:absolute sm:-left-36 sm:top-1 sm:text-right w-28 text-xs font-bold uppercase tracking-widest text-burgundy-900 mb-1 sm:mb-0">
+                    7:30 PM
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-gold-400/20">
+                    <h3 class="text-xl font-serif font-bold text-emerald-900">Evening Reception &amp; First Dance</h3>
+                    <p class="text-emerald-900/80 text-sm mt-1">Cake cutting, live music, and dancing into the night.</p>
+                </div>
+            </div>
+
+            <!-- Midnight -->
+            <div class="relative pl-8 sm:pl-10 group">
+                <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-cream border-2 border-gold-400 flex items-center justify-center text-burgundy-900 text-xs shadow-sm group-hover:bg-gold-400 transition-colors">
+                    <i class="fa-solid fa-moon"></i>
+                </div>
+                <div class="sm:absolute sm:-left-36 sm:top-1 sm:text-right w-28 text-xs font-bold uppercase tracking-widest text-burgundy-900 mb-1 sm:mb-0">
+                    12:00 AM
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-gold-400/20">
+                    <h3 class="text-xl font-serif font-bold text-emerald-900">Carriages</h3>
+                    <p class="text-emerald-900/80 text-sm mt-1">Final dance and goodnight to guests!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel & Accommodation Section -->
+    <section id="travel" class="py-24 bg-emerald-900/5 border-y border-gold-400/20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-burgundy-900 font-script text-3xl">Guest Guide</span>
+                <h2 class="text-4xl sm:text-5xl font-serif font-normal text-emerald-900 mt-1">Accommodation &amp; Travel</h2>
+                <div class="gold-divider"></div>
+                <p class="text-emerald-900/80 text-sm sm:text-base">
+                    For guests traveling to Coventry, here are top recommended nearby hotels within walking distance of St Mary's Guildhall.
+                </p>
+            </div>
+
+            <!-- Recommended Hotels Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Hotel 1 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/30 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-gold-200 text-emerald-900 px-3 py-1 rounded-full">2 Mins Walk</span>
+                        <h3 class="text-2xl font-serif font-bold text-emerald-900 mt-3 mb-1">The Telegraph Hotel</h3>
+                        <p class="text-emerald-900/70 text-xs mb-3">Corporation Street, Coventry CV1 1GS</p>
+                        <p class="text-emerald-900/80 text-xs leading-relaxed mb-4">
+                            Luxury mid-century boutique hotel right in Coventry city center, located just around the corner from the Guildhall.
+                        </p>
+                    </div>
+                    <a href="https://www.telegraphhotel.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider">Book Telegraph Hotel <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+
+                <!-- Hotel 2 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/30 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-3 py-1 rounded-full">5 Mins Walk</span>
+                        <h3 class="text-2xl font-serif font-bold text-emerald-900 mt-3 mb-1">Premier Inn City Centre</h3>
+                        <p class="text-emerald-900/70 text-xs mb-3">Earl Street, Coventry CV1 5RU</p>
+                        <p class="text-emerald-900/80 text-xs leading-relaxed mb-4">
+                            Convenient and modern budget hotel located extremely close to Bayley Lane and the Cathedral Quarter.
+                        </p>
+                    </div>
+                    <a href="https://www.premierinn.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider">Book Premier Inn <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+
+                <!-- Hotel 3 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/30 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-burgundy-100 text-burgundy-900 px-3 py-1 rounded-full">15 Mins Drive</span>
+                        <h3 class="text-2xl font-serif font-bold text-emerald-900 mt-3 mb-1">Coombe Abbey Hotel</h3>
+                        <p class="text-emerald-900/70 text-xs mb-3">Brinklow Road, Binley, Coventry CV3 2AB</p>
+                        <p class="text-emerald-900/80 text-xs leading-relaxed mb-4">
+                            Historic countryside abbey estate hotel for those seeking a country house stay near Coventry.
+                        </p>
+                    </div>
+                    <a href="https://www.coombeabbey.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider">Book Coombe Abbey <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Registry & Wishing Well -->
+    <section id="registry" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
+        <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gold-400/30">
+            <div class="w-16 h-16 rounded-full bg-gold-200 text-emerald-900 flex items-center justify-center mx-auto text-2xl mb-6">
+                <i class="fa-solid fa-gift"></i>
+            </div>
+            <span class="text-burgundy-900 font-script text-3xl">Your Presence is Our Present</span>
+            <h2 class="text-4xl sm:text-5xl font-serif font-normal text-emerald-900 mt-1 mb-4">Gift &amp; Honeymoon Fund</h2>
+            <div class="gold-divider"></div>
+
+            <p class="text-emerald-900/80 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-8">
+                Having shared 8 wonderful years together and raising our two kids, we already have a home full of everything we need! If you would like to bless us with a gift, a contribution toward our family honeymoon fund would mean the world to us.
+            </p>
+
+            <button onclick="toggleBankDetails()" class="px-8 py-3.5 bg-emerald-900 hover:bg-emerald-800 text-white font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow">
+                <i class="fa-solid fa-piggy-bank mr-2 text-gold-300"></i> View Honeymoon Gift Account Details
+            </button>
+
+            <!-- Hidden Bank Info Box -->
+            <div id="bank-details" class="hidden mt-8 p-6 bg-cream rounded-2xl border border-gold-400/40 text-left max-w-md mx-auto space-y-2">
+                <h4 class="font-serif font-bold text-lg text-emerald-900 border-b border-gold-400/30 pb-2">Honeymoon Fund Details</h4>
+                <div class="text-xs text-emerald-900 space-y-1">
+                    <p><strong>Account Name:</strong> Michael Simmons &amp; Vita Grigaraviciute</p>
+                    <p><strong>Sort Code:</strong> 20-23-40</p>
+                    <p><strong>Account No:</strong> 73920184</p>
+                    <p><strong>Reference:</strong> Your Name (Wedding Gift)</p>
+                </div>
+                <button onclick="copyBankInfo()" class="mt-3 w-full py-2.5 bg-burgundy-900 text-white font-bold rounded-xl text-xs uppercase tracking-wider hover:bg-emerald-900 transition-colors">
+                    <i class="fa-solid fa-copy mr-1"></i> Copy Account Details
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-gold-400/40 relative">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-burgundy-900 font-script text-3xl">Kindly Respond</span>
+                <h2 class="text-4xl sm:text-5xl font-serif font-normal text-emerald-900 mt-1">RSVP For Our Wedding</h2>
+                <div class="gold-divider"></div>
+                <p class="text-emerald-900/80 text-sm sm:text-base">
+                    Please submit your response by <strong>31st October 2027</strong>.
+                </p>
+            </div>
+
+            <!-- Interactive Form -->
+            <form id="wedding-rsvp-form" onsubmit="handleRSVPSubmit(event)" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="guest-name" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Full Name *</label>
+                        <input type="text" id="guest-name" required placeholder="e.g. Michael Smith" class="w-full px-4 py-3 rounded-xl border border-gold-400/40 focus:border-burgundy-900 focus:ring-1 focus:ring-burgundy-900 outline-none transition-all text-sm bg-cream/50">
+                    </div>
+
+                    <div>
+                        <label for="guest-email" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Email Address *</label>
+                        <input type="email" id="guest-email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-gold-400/40 focus:border-burgundy-900 focus:ring-1 focus:ring-burgundy-900 outline-none transition-all text-sm bg-cream/50">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Will you be attending? *</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <label class="flex items-center gap-3 p-4 rounded-xl border border-gold-400/40 cursor-pointer hover:bg-cream transition-colors">
+                            <input type="radio" name="attendance" value="Joyfully Accepts" checked onclick="toggleAttending(true)" class="accent-burgundy-900 w-4 h-4">
+                            <span class="text-sm font-semibold text-emerald-900">Joyfully Accepts</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-4 rounded-xl border border-gold-400/40 cursor-pointer hover:bg-cream transition-colors">
+                            <input type="radio" name="attendance" value="Regretfully Declines" onclick="toggleAttending(false)" class="accent-burgundy-900 w-4 h-4">
+                            <span class="text-sm font-semibold text-emerald-900">Regretfully Declines</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="attending-details" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="plus-ones" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Number of Guests / Children Attending</label>
+                            <input type="text" id="plus-ones" placeholder="e.g. 2 Adults, 1 Child" class="w-full px-4 py-3 rounded-xl border border-gold-400/40 focus:border-burgundy-900 focus:ring-1 focus:ring-burgundy-900 outline-none transition-all text-sm bg-cream/50">
+                        </div>
+                        <div>
+                            <label for="dietary" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Dietary Requirements / Allergies</label>
+                            <input type="text" id="dietary" placeholder="e.g. Vegetarian, Nut Allergy" class="w-full px-4 py-3 rounded-xl border border-gold-400/40 focus:border-burgundy-900 focus:ring-1 focus:ring-burgundy-900 outline-none transition-all text-sm bg-cream/50">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="song-request" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Song Request for the Evening Party 🎵</label>
+                        <input type="text" id="song-request" placeholder="Which track will get you on the dancefloor?" class="w-full px-4 py-3 rounded-xl border border-gold-400/40 focus:border-burgundy-900 focus:ring-1 focus:ring-burgundy-900 outline-none transition-all text-sm bg-cream/50">
+                    </div>
+                </div>
+
+                <div class="pt-4 text-center">
+                    <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-burgundy-900 hover:bg-emerald-900 text-white font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow-lg">
+                        Submit RSVP Response
+                    </button>
+                </div>
+            </form>
+
+            <!-- Success Confirmation -->
+            <div id="rsvp-success" class="hidden text-center py-12 px-4 space-y-4">
+                <div class="w-16 h-16 bg-gold-200 text-emerald-900 rounded-full flex items-center justify-center mx-auto text-3xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h3 class="text-3xl font-serif text-emerald-900">Thank You!</h3>
+                <p id="rsvp-summary-text" class="text-emerald-900/80 text-sm max-w-md mx-auto leading-relaxed">
+                    Your response has been recorded. We can't wait to see you at St Mary's Guildhall in December!
+                </p>
+                <button onclick="resetRSVPForm()" class="text-xs uppercase tracking-wider font-bold text-burgundy-900 hover:underline mt-4">
+                    Submit Another Response
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-emerald-900/5 border-t border-gold-400/20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-burgundy-900 font-script text-3xl">Questions &amp; Answers</span>
+                <h2 class="text-4xl sm:text-5xl font-serif font-normal text-emerald-900 mt-1">Frequently Asked Questions</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group bg-white rounded-2xl border border-gold-400/30 p-6 shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer font-serif text-xl text-emerald-900 font-bold">
+                        <span>Are children welcome?</span>
+                        <span class="transition group-open:rotate-180 text-burgundy-900">
+                            <i class="fa-solid fa-chevron-down text-sm"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-sm text-emerald-900/80 leading-relaxed">
+                        Yes! As parents of two kids ourselves, children are very welcome to join us in celebrating our wedding day.
+                    </p>
+                </details>
+
+                <details class="group bg-white rounded-2xl border border-gold-400/30 p-6 shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer font-serif text-xl text-emerald-900 font-bold">
+                        <span>What is the dress code?</span>
+                        <span class="transition group-open:rotate-180 text-burgundy-900">
+                            <i class="fa-solid fa-chevron-down text-sm"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-sm text-emerald-900/80 leading-relaxed">
+                        Winter Formal / Cocktail Attire. Suits and ties for gentlemen, and elegant cocktail or evening dresses for ladies.
+                    </p>
+                </details>
+
+                <details class="group bg-white rounded-2xl border border-gold-400/30 p-6 shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer font-serif text-xl text-emerald-900 font-bold">
+                        <span>Is St Mary's Guildhall accessible?</span>
+                        <span class="transition group-open:rotate-180 text-burgundy-900">
+                            <i class="fa-solid fa-chevron-down text-sm"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-sm text-emerald-900/80 leading-relaxed">
+                        Yes, St Mary's Guildhall has full step-free wheelchair accessibility and lift access throughout the main areas.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-900 text-white py-16 px-4 text-center border-t border-gold-400/30">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <a href="#hero" class="text-4xl font-script text-gold-300 hover:text-white transition-colors inline-block">
+                Michael &amp; Vita
+            </a>
+            <p class="text-xs uppercase tracking-widest text-gold-200">
+                12th December 2027 • St Mary's Guildhall, Coventry
+            </p>
+            <div class="gold-divider"></div>
+            <p class="text-xs text-cream/60">
+                Created for Michael Simmons &amp; Vita Grigaraviciute • Ready to host on GitHub Pages
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Wedding Date: December 12, 2027 at 14:00:00
+        const weddingDate = new Date('December 12, 2027 14:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById('timer-days').innerText = "00";
+                document.getElementById('timer-hours').innerText = "00";
+                document.getElementById('timer-minutes').innerText = "00";
+                document.getElementById('timer-seconds').innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('timer-days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('timer-hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('timer-minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('timer-seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Mobile Menu Drawer Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.className = mobileMenu.classList.contains('hidden') ? "fa-solid fa-bars text-2xl" : "fa-solid fa-xmark text-2xl";
+        });
+
+        document.querySelectorAll('.mobile-nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = "fa-solid fa-bars text-2xl";
+            });
+        });
+
+        // RSVP Logic
+        function toggleAttending(isAttending) {
+            const details = document.getElementById('attending-details');
+            if (isAttending) {
+                details.classList.remove('opacity-50', 'pointer-events-none');
+            } else {
+                details.classList.add('opacity-50', 'pointer-events-none');
+            }
+        }
+
+        function handleRSVPSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('guest-name').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked').value;
+
+            document.getElementById('wedding-rsvp-form').classList.add('hidden');
+            document.getElementById('rsvp-success').classList.remove('hidden');
+
+            const summary = document.getElementById('rsvp-summary-text');
+            if (attendance.includes("Declines")) {
+                summary.innerHTML = `Thank you for letting us know, <strong>${name}</strong>. You will be warmly missed!`;
+            } else {
+                summary.innerHTML = `Thank you <strong>${name}</strong>! Your RSVP has been confirmed. We can't wait to see you at St Mary's Guildhall on 12th December!`;
+            }
+        }
+
+        function resetRSVPForm() {
+            document.getElementById('wedding-rsvp-form').reset();
+            document.getElementById('wedding-rsvp-form').classList.remove('hidden');
+            document.getElementById('rsvp-success').classList.add('hidden');
+            toggleAttending(true);
+        }
+
+        // Bank Drawer & Copy
+        function toggleBankDetails() {
+            document.getElementById('bank-details').classList.toggle('hidden');
+        }
+
+        function copyBankInfo() {
+            const text = "Account Name: Michael Simmons & Vita Grigaraviciute\nSort Code: 20-23-40\nAccount No: 73920184";
+            const temp = document.createElement('textarea');
+            temp.value = text;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            alert("Bank details copied to clipboard!");
+        }
+
+        // Add to Calendar
+        function addToCalendar() {
+            const icsData = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'BEGIN:VEVENT',
+                'SUMMARY:Michael & Vita Wedding',
+                'DESCRIPTION:Michael Simmons & Vita Grigaraviciute Wedding at St Marys Guildhall Coventry.',
+                'LOCATION:St Marys Guildhall, Bayley Ln, Coventry CV1 5RN',
+                'DTSTART:20271212T133000Z',
+                'DTEND:20271213T000000Z',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\n');
+
+            const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'Michael-and-Vita-Wedding.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
