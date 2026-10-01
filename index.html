@@ -588,7 +588,7 @@
             </div>
 
             <!-- Interactive Form -->
-            <form id="wedding-rsvp-form" onsubmit="handleRSVPSubmit(event)" class="space-y-6">
+            <form id="wedding-rsvp-form" action="mailto:michaelsimmo11@gmail.com" method="post" enctype="text/plain" onsubmit="handleRSVPSubmit(event)" class="space-y-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                         <label for="guest-name" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Full Name *</label>
@@ -781,8 +781,27 @@
 
         function handleRSVPSubmit(event) {
             event.preventDefault();
-            const name = document.getElementById('guest-name').value;
+
+            const name = document.getElementById('guest-name').value.trim();
+            const email = document.getElementById('guest-email').value.trim();
             const attendance = document.querySelector('input[name="attendance"]:checked').value;
+            const plusOnes = document.getElementById('plus-ones').value.trim();
+            const dietary = document.getElementById('dietary').value.trim();
+            const songRequest = document.getElementById('song-request').value.trim();
+
+            const emailBody = [
+                'Wedding RSVP Response',
+                '',
+                `Full Name: ${name}`,
+                `Email: ${email}`,
+                `Attendance: ${attendance}`,
+                `Guests / Children Attending: ${plusOnes || 'Not provided'}`,
+                `Dietary Requirements / Allergies: ${dietary || 'Not provided'}`,
+                `Song Request: ${songRequest || 'Not provided'}`
+            ].join('\n');
+
+            const mailtoLink = `mailto:michaelsimmo11@gmail.com?subject=${encodeURIComponent('Wedding RSVP from ' + name)}&body=${encodeURIComponent(emailBody)}`;
+            window.location.href = mailtoLink;
 
             document.getElementById('wedding-rsvp-form').classList.add('hidden');
             document.getElementById('rsvp-success').classList.remove('hidden');
