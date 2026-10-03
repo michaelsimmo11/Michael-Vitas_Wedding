@@ -159,7 +159,7 @@
 
                 <!-- Desktop Header Action Button -->
                 <div class="hidden md:block">
-                    <a href="#rsvp" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase bg-burgundy-900 text-white hover:bg-emerald-900 transition-all shadow-md hover:-translate-y-0.5 border border-gold-400/30">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfohODQFBDMttFGCHMji8flaneZPKWEZui2wnDuV_sK03oNlA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase bg-burgundy-900 text-white hover:bg-emerald-900 transition-all shadow-md hover:-translate-y-0.5 border border-gold-400/30">
                         <i class="fa-solid fa-snowflake mr-2 text-gold-300"></i> RSVP
                     </a>
                 </div>
@@ -180,7 +180,7 @@
             <a href="#travel" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Travel &amp; Hotels</a>
             <a href="#registry" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Gift Registry</a>
             <a href="#faq" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">FAQ</a>
-            <a href="#rsvp" class="mobile-nav-item block mt-4 py-3 bg-burgundy-900 text-white rounded-full font-bold uppercase text-xs tracking-widest shadow">RSVP Now</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfohODQFBDMttFGCHMji8flaneZPKWEZui2wnDuV_sK03oNlA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="mobile-nav-item block mt-4 py-3 bg-burgundy-900 text-white rounded-full font-bold uppercase text-xs tracking-widest shadow">RSVP Now</a>
         </div>
     </header>
 
@@ -233,7 +233,7 @@
 
             <!-- Call to Actions -->
             <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#rsvp" class="w-full sm:w-auto px-9 py-4 bg-gold-400 hover:bg-gold-500 text-emerald-900 font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow-lg hover:-translate-y-0.5">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfohODQFBDMttFGCHMji8flaneZPKWEZui2wnDuV_sK03oNlA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-9 py-4 bg-gold-400 hover:bg-gold-500 text-emerald-900 font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow-lg hover:-translate-y-0.5">
                     RSVP For Wedding
                 </a>
                 <button onclick="addToCalendar()" class="w-full sm:w-auto px-7 py-4 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/30 font-semibold rounded-full uppercase text-xs tracking-widest transition-all flex items-center justify-center gap-2">
@@ -577,82 +577,16 @@
 
     <!-- RSVP Section -->
     <section id="rsvp" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-gold-400/40 relative">
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="text-burgundy-900 font-script text-3xl">Kindly Respond</span>
-                <h2 class="text-4xl sm:text-5xl font-serif font-normal text-emerald-900 mt-1">RSVP For Our Wedding</h2>
-                <div class="gold-divider"></div>
-                <p class="text-emerald-900/80 text-sm sm:text-base">
-                    Please submit your response by <strong>31st October 2027</strong>.
-                </p>
-            </div>
-
-            <!-- Interactive Form -->
-            <form id="wedding-rsvp-form" action="mailto:michaelsimmo11@gmail.com" method="post" enctype="text/plain" onsubmit="handleRSVPSubmit(event)" class="space-y-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label for="guest-name" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Full Name *</label>
-                        <input type="text" id="guest-name" required placeholder="e.g. Michael Smith" class="w-full px-4 py-3 rounded-xl border border-gold-400/40 focus:border-burgundy-900 focus:ring-1 focus:ring-burgundy-900 outline-none transition-all text-sm bg-cream/50">
-                    </div>
-
-                    <div>
-                        <label for="guest-email" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Email Address *</label>
-                        <input type="email" id="guest-email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-gold-400/40 focus:border-burgundy-900 focus:ring-1 focus:ring-burgundy-900 outline-none transition-all text-sm bg-cream/50">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Will you be attending? *</label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <label class="flex items-center gap-3 p-4 rounded-xl border border-gold-400/40 cursor-pointer hover:bg-cream transition-colors">
-                            <input type="radio" name="attendance" value="Joyfully Accepts" checked onclick="toggleAttending(true)" class="accent-burgundy-900 w-4 h-4">
-                            <span class="text-sm font-semibold text-emerald-900">Joyfully Accepts</span>
-                        </label>
-                        <label class="flex items-center gap-3 p-4 rounded-xl border border-gold-400/40 cursor-pointer hover:bg-cream transition-colors">
-                            <input type="radio" name="attendance" value="Regretfully Declines" onclick="toggleAttending(false)" class="accent-burgundy-900 w-4 h-4">
-                            <span class="text-sm font-semibold text-emerald-900">Regretfully Declines</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div id="attending-details" class="space-y-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label for="plus-ones" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Number of Guests / Children Attending</label>
-                            <input type="text" id="plus-ones" placeholder="e.g. 2 Adults, 1 Child" class="w-full px-4 py-3 rounded-xl border border-gold-400/40 focus:border-burgundy-900 focus:ring-1 focus:ring-burgundy-900 outline-none transition-all text-sm bg-cream/50">
-                        </div>
-                        <div>
-                            <label for="dietary" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Dietary Requirements / Allergies</label>
-                            <input type="text" id="dietary" placeholder="e.g. Vegetarian, Nut Allergy" class="w-full px-4 py-3 rounded-xl border border-gold-400/40 focus:border-burgundy-900 focus:ring-1 focus:ring-burgundy-900 outline-none transition-all text-sm bg-cream/50">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="song-request" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Song Request for the Evening Party 🎵</label>
-                        <input type="text" id="song-request" placeholder="Which track will get you on the dancefloor?" class="w-full px-4 py-3 rounded-xl border border-gold-400/40 focus:border-burgundy-900 focus:ring-1 focus:ring-burgundy-900 outline-none transition-all text-sm bg-cream/50">
-                    </div>
-                </div>
-
-                <div class="pt-4 text-center">
-                    <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-burgundy-900 hover:bg-emerald-900 text-white font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow-lg">
-                        Submit RSVP Response
-                    </button>
-                </div>
-            </form>
-
-            <!-- Success Confirmation -->
-            <div id="rsvp-success" class="hidden text-center py-12 px-4 space-y-4">
-                <div class="w-16 h-16 bg-gold-200 text-emerald-900 rounded-full flex items-center justify-center mx-auto text-3xl">
-                    <i class="fa-solid fa-check"></i>
-                </div>
-                <h3 class="text-3xl font-serif text-emerald-900">Thank You!</h3>
-                <p id="rsvp-summary-text" class="text-emerald-900/80 text-sm max-w-md mx-auto leading-relaxed">
-                    Your response has been recorded. We can't wait to see you at St Mary's Guildhall in December!
-                </p>
-                <button onclick="resetRSVPForm()" class="text-xs uppercase tracking-wider font-bold text-burgundy-900 hover:underline mt-4">
-                    Submit Another Response
-                </button>
-            </div>
+        <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-gold-400/40 text-center">
+            <span class="text-burgundy-900 font-script text-3xl">Kindly Respond</span>
+            <h2 class="text-4xl sm:text-5xl font-serif font-normal text-emerald-900 mt-1">RSVP For Our Wedding</h2>
+            <div class="gold-divider"></div>
+            <p class="text-emerald-900/80 text-sm sm:text-base mb-8">
+                Please submit your response by <strong>31st October 2027</strong>.
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfohODQFBDMttFGCHMji8flaneZPKWEZui2wnDuV_sK03oNlA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-burgundy-900 hover:bg-emerald-900 text-white font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow-lg">
+                <i class="fa-solid fa-clipboard-list text-gold-300"></i> Respond via Google Forms
+            </a>
         </div>
     </section>
 
@@ -768,58 +702,6 @@
                 menuIcon.className = "fa-solid fa-bars text-2xl";
             });
         });
-
-        // RSVP Logic
-        function toggleAttending(isAttending) {
-            const details = document.getElementById('attending-details');
-            if (isAttending) {
-                details.classList.remove('opacity-50', 'pointer-events-none');
-            } else {
-                details.classList.add('opacity-50', 'pointer-events-none');
-            }
-        }
-
-        function handleRSVPSubmit(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('guest-name').value.trim();
-            const email = document.getElementById('guest-email').value.trim();
-            const attendance = document.querySelector('input[name="attendance"]:checked').value;
-            const plusOnes = document.getElementById('plus-ones').value.trim();
-            const dietary = document.getElementById('dietary').value.trim();
-            const songRequest = document.getElementById('song-request').value.trim();
-
-            const emailBody = [
-                'Wedding RSVP Response',
-                '',
-                `Full Name: ${name}`,
-                `Email: ${email}`,
-                `Attendance: ${attendance}`,
-                `Guests / Children Attending: ${plusOnes || 'Not provided'}`,
-                `Dietary Requirements / Allergies: ${dietary || 'Not provided'}`,
-                `Song Request: ${songRequest || 'Not provided'}`
-            ].join('\n');
-
-            const mailtoLink = `mailto:michaelsimmo11@gmail.com?subject=${encodeURIComponent('Wedding RSVP from ' + name)}&body=${encodeURIComponent(emailBody)}`;
-            window.location.href = mailtoLink;
-
-            document.getElementById('wedding-rsvp-form').classList.add('hidden');
-            document.getElementById('rsvp-success').classList.remove('hidden');
-
-            const summary = document.getElementById('rsvp-summary-text');
-            if (attendance.includes("Declines")) {
-                summary.innerHTML = `Thank you for letting us know, <strong>${name}</strong>. You will be warmly missed!`;
-            } else {
-                summary.innerHTML = `Thank you <strong>${name}</strong>! Your RSVP has been confirmed. We can't wait to see you at St Mary's Guildhall on 12th December!`;
-            }
-        }
-
-        function resetRSVPForm() {
-            document.getElementById('wedding-rsvp-form').reset();
-            document.getElementById('wedding-rsvp-form').classList.remove('hidden');
-            document.getElementById('rsvp-success').classList.add('hidden');
-            toggleAttending(true);
-        }
 
         // Bank Drawer & Copy
         function toggleBankDetails() {
