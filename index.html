@@ -153,7 +153,6 @@
                     <a href="#details" class="nav-link hover:text-gold-500 transition-colors py-1">The Venue</a>
                     <a href="#schedule" class="nav-link hover:text-gold-500 transition-colors py-1">Schedule</a>
                     <a href="#travel" class="nav-link hover:text-gold-500 transition-colors py-1">Travel &amp; Stay</a>
-                    <a href="#registry" class="nav-link hover:text-gold-500 transition-colors py-1">Gifts</a>
                     <a href="#faq" class="nav-link hover:text-gold-500 transition-colors py-1">FAQ</a>
                 </nav>
 
@@ -178,7 +177,6 @@
             <a href="#details" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">The Venue</a>
             <a href="#schedule" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Schedule</a>
             <a href="#travel" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Travel &amp; Hotels</a>
-            <a href="#registry" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Gift Registry</a>
             <a href="#faq" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">FAQ</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfohODQFBDMttFGCHMji8flaneZPKWEZui2wnDuV_sK03oNlA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="mobile-nav-item block mt-4 py-3 bg-burgundy-900 text-white rounded-full font-bold uppercase text-xs tracking-widest shadow">RSVP Now</a>
         </div>
@@ -541,40 +539,6 @@
         </div>
     </section>
 
-    <!-- Gift Registry & Wishing Well -->
-    <section id="registry" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
-        <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gold-400/30">
-            <div class="w-16 h-16 rounded-full bg-gold-200 text-emerald-900 flex items-center justify-center mx-auto text-2xl mb-6">
-                <i class="fa-solid fa-gift"></i>
-            </div>
-            <span class="text-burgundy-900 font-script text-3xl">Your Presence is Our Present</span>
-            <h2 class="text-4xl sm:text-5xl font-serif font-normal text-emerald-900 mt-1 mb-4">Gift &amp; Honeymoon Fund</h2>
-            <div class="gold-divider"></div>
-
-            <p class="text-emerald-900/80 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-8">
-                Having shared 8 wonderful years together and raising our two kids, we already have a home full of everything we need! If you would like to bless us with a gift, a contribution toward our family honeymoon fund would mean the world to us.
-            </p>
-
-            <button onclick="toggleBankDetails()" class="px-8 py-3.5 bg-emerald-900 hover:bg-emerald-800 text-white font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow">
-                <i class="fa-solid fa-piggy-bank mr-2 text-gold-300"></i> View Honeymoon Gift Account Details
-            </button>
-
-            <!-- Hidden Bank Info Box -->
-            <div id="bank-details" class="hidden mt-8 p-6 bg-cream rounded-2xl border border-gold-400/40 text-left max-w-md mx-auto space-y-2">
-                <h4 class="font-serif font-bold text-lg text-emerald-900 border-b border-gold-400/30 pb-2">Honeymoon Fund Details</h4>
-                <div class="text-xs text-emerald-900 space-y-1">
-                    <p><strong>Account Name:</strong> Michael Simmons &amp; Vita Grigaraviciute</p>
-                    <p><strong>Sort Code:</strong> 20-23-40</p>
-                    <p><strong>Account No:</strong> 73920184</p>
-                    <p><strong>Reference:</strong> Your Name (Wedding Gift)</p>
-                </div>
-                <button onclick="copyBankInfo()" class="mt-3 w-full py-2.5 bg-burgundy-900 text-white font-bold rounded-xl text-xs uppercase tracking-wider hover:bg-emerald-900 transition-colors">
-                    <i class="fa-solid fa-copy mr-1"></i> Copy Account Details
-                </button>
-            </div>
-        </div>
-    </section>
-
     <!-- RSVP Section -->
     <section id="rsvp" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-gold-400/40 text-center">
@@ -702,22 +666,6 @@
                 menuIcon.className = "fa-solid fa-bars text-2xl";
             });
         });
-
-        // Bank Drawer & Copy
-        function toggleBankDetails() {
-            document.getElementById('bank-details').classList.toggle('hidden');
-        }
-
-        function copyBankInfo() {
-            const text = "Account Name: Michael Simmons & Vita Grigaraviciute\nSort Code: 20-23-40\nAccount No: 73920184";
-            const temp = document.createElement('textarea');
-            temp.value = text;
-            document.body.appendChild(temp);
-            temp.select();
-            document.execCommand('copy');
-            document.body.removeChild(temp);
-            alert("Bank details copied to clipboard!");
-        }
 
         // Add to Calendar
         function addToCalendar() {
