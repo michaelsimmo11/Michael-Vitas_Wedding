@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-GB" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,151 +13,11 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        emerald: {
-                            900: '#0F382C', // Deep Winter Emerald Green
-                            800: '#154a3b',
-                            700: '#1d6350',
-                            100: '#e6f0ed',
-                        },
-                        burgundy: {
-                            950: '#3d0c15',
-                            900: '#5C1323', // Rich Winter Burgundy
-                            800: '#7a1c30',
-                            100: '#f9eaed',
-                        },
-                        gold: {
-                            200: '#F3E5AB',
-                            300: '#E5D08F',
-                            400: '#D4AF37', // Warm Champagne Gold Accent
-                            500: '#C5A059',
-                            600: '#AA8236',
-                        },
-                        cream: '#FDFBF7', // Soft Cream background
-                        charcoal: '#1E2421',
-                    },
-                    fontFamily: {
-                        serif: ['Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        script: ['Alex Brush', 'cursive'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="styles.css">
 
-    <style>
-        /* ==========================================================================
-           WINTER WEDDING CUSTOM STYLESHEET
-           (You can copy this block directly into a 'style.css' file if preferred)
-           ========================================================================== */
-
-        :root {
-            --color-emerald-deep: #0F382C;
-            --color-burgundy: #5C1323;
-            --color-gold: #D4AF37;
-            --color-cream: #FDFBF7;
-            --color-text-dark: #1E2421;
-        }
-
-        body {
-            background-color: var(--color-cream);
-            color: var(--color-text-dark);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Hero Background with Dark Overlay */
-        .winter-hero-bg {
-            background-image: linear-gradient(to bottom, rgba(15, 56, 44, 0.75), rgba(61, 12, 21, 0.85)), 
-                              url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        /* Glassmorphism Header */
-        .glass-header {
-            background: rgba(253, 251, 247, 0.94);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        /* Active Navigation Link Highlight */
-        .nav-link.active {
-            color: #C5A059;
-            font-weight: 600;
-        }
-        .nav-link.active::after {
-            content: '';
-            display: block;
-            width: 70%;
-            height: 2px;
-            background-color: #D4AF37;
-            margin: 2px auto 0;
-            border-radius: 2px;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #FDFBF7;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #0F382C;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #5C1323;
-        }
-
-        /* Gold Sparkle Decorative Divider */
-        .gold-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
-            width: 140px;
-            margin: 1rem auto;
-        }
-
-        /* Hide details summary default arrow */
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-
-        /* Subtle falling snow for the Christmas celebration */
-        .snowfall {
-            position: fixed;
-            inset: 0;
-            z-index: 40;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        .snowflake {
-            position: absolute;
-            top: -20px;
-            color: rgba(255, 255, 255, 0.75);
-            font-size: var(--snow-size, 14px);
-            animation: snowfall var(--snow-duration, 12s) linear var(--snow-delay, 0s) infinite;
-            text-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
-        }
-        @keyframes snowfall {
-            0% { transform: translate3d(0, -20px, 0) rotate(0deg); }
-            100% { transform: translate3d(var(--snow-drift, 30px), 100vh, 0) rotate(360deg); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .snowflake { animation: none; display: none; }
-        }
-    </style>
 </head>
 <body class="relative antialiased selection:bg-gold-200 selection:text-emerald-900">
+    <a href="#hero" class="skip-link">Skip to main content</a>
     <div id="snowfall" class="snowfall" aria-hidden="true"></div>
 
     <!-- Sticky Navigation Bar -->
@@ -183,13 +43,13 @@
 
                 <!-- Desktop Header Action Button -->
                 <div class="hidden md:block">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfohODQFBDMttFGCHMji8flaneZPKWEZui2wnDuV_sK03oNlA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase bg-burgundy-900 text-white hover:bg-emerald-900 transition-all shadow-md hover:-translate-y-0.5 border border-gold-400/30">
+                    <a href="https://forms.gle/fxfyzKuse4TSMHWV7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase bg-burgundy-900 text-white hover:bg-emerald-900 transition-all shadow-md hover:-translate-y-0.5 border border-gold-400/30">
                         <i class="fa-solid fa-snowflake mr-2 text-gold-300"></i> RSVP
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" type="button" class="md:hidden p-2 text-emerald-900 hover:text-gold-500 focus:outline-none" aria-label="Toggle Mobile Menu">
+                <button id="mobile-menu-btn" type="button" class="md:hidden p-2 text-emerald-900 hover:text-gold-500" aria-label="Toggle mobile menu" aria-controls="mobile-menu" aria-expanded="false">
                     <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -203,7 +63,7 @@
             <a href="#schedule" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Schedule</a>
             <a href="#travel" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">Travel &amp; Hotels</a>
             <a href="#faq" class="mobile-nav-item block py-2.5 text-emerald-900 font-medium uppercase tracking-wider text-xs border-b border-gold-200/50">FAQ</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfohODQFBDMttFGCHMji8flaneZPKWEZui2wnDuV_sK03oNlA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="mobile-nav-item block mt-4 py-3 bg-burgundy-900 text-white rounded-full font-bold uppercase text-xs tracking-widest shadow">RSVP Now</a>
+            <a href="https://forms.gle/fxfyzKuse4TSMHWV7" target="_blank" rel="noopener noreferrer" class="mobile-nav-item block mt-4 py-3 bg-burgundy-900 text-white rounded-full font-bold uppercase text-xs tracking-widest shadow">RSVP Now</a>
         </div>
     </header>
 
@@ -233,8 +93,9 @@
 
             <!-- Live Countdown Timer Component -->
             <div class="pt-6 pb-4">
-                <p class="text-xs uppercase tracking-widest text-gold-300 mb-4 font-bold">Counting Down To Our Christmas Wedding</p>
-                <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
+                <p class="text-xs uppercase tracking-widest text-gold-300 mb-2 font-bold">Counting Down To Guest Arrival</p>
+                <p class="text-xs text-cream/90 mb-4">Please arrive by 1:30 PM; the ceremony begins at 2:00 PM.</p>
+                <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto" role="timer" aria-label="Countdown to guest arrival at 1:30 PM UK time">
                     <div class="bg-emerald-900/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-gold-400/40 shadow-lg">
                         <span id="timer-days" class="block text-2xl sm:text-4xl font-serif font-bold text-white">00</span>
                         <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gold-200">Days</span>
@@ -256,7 +117,7 @@
 
             <!-- Call to Actions -->
             <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfohODQFBDMttFGCHMji8flaneZPKWEZui2wnDuV_sK03oNlA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-9 py-4 bg-gold-400 hover:bg-gold-500 text-emerald-900 font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow-lg hover:-translate-y-0.5">
+                <a href="https://forms.gle/fxfyzKuse4TSMHWV7" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-9 py-4 bg-gold-400 hover:bg-gold-500 text-emerald-900 font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow-lg hover:-translate-y-0.5">
                     RSVP For Wedding
                 </a>
                 <button onclick="addToCalendar()" class="w-full sm:w-auto px-7 py-4 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/30 font-semibold rounded-full uppercase text-xs tracking-widest transition-all flex items-center justify-center gap-2">
@@ -288,7 +149,7 @@
             <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/20 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
-                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop" alt="Kasbah Coventry Memories" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=Kasbah+2016'">
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop" alt="Kasbah Coventry Memories" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=Kasbah+2016'">
                         <span class="absolute top-3 left-3 bg-burgundy-900 text-gold-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">2016</span>
                     </div>
                     <h3 class="text-xl font-serif font-bold text-emerald-900 mb-2">Met at Kasbah</h3>
@@ -302,7 +163,7 @@
             <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/20 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
-                        <img src="https://media.licdn.com/dms/image/v2/C4D03AQE68sYyqViaNg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1531576018837?e=2147483647&v=beta&t=PE2YCwE3EaYHQGwxzJZ9rCod9HDXEMZc83LsAv2wS2k" alt="9 Years Together" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=9+Years+Love'">
+                        <img src="https://media.licdn.com/dms/image/v2/C4D03AQE68sYyqViaNg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1531576018837?e=2147483647&v=beta&t=PE2YCwE3EaYHQGwxzJZ9rCod9HDXEMZc83LsAv2wS2k" alt="9 Years Together" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=9+Years+Love'">
                         <span class="absolute top-3 left-3 bg-emerald-900 text-gold-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">9 Years Strong</span>
                     </div>
                     <h3 class="text-xl font-serif font-bold text-emerald-900 mb-2">Building Our Life</h3>
@@ -316,7 +177,7 @@
             <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/20 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
-                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600&auto=format&fit=crop" alt="Family and Two Kids" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=Our+Family'">
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600&auto=format&fit=crop" alt="Family and Two Kids" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=Our+Family'">
                         <span class="absolute top-3 left-3 bg-burgundy-900 text-gold-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Our Family</span>
                     </div>
                     <h3 class="text-xl font-serif font-bold text-emerald-900 mb-2">Our Two Children</h3>
@@ -330,7 +191,7 @@
             <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/20 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 rounded-2xl overflow-hidden mb-5">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/St_Mary%27s_Guildhall%2C_Bayley_Lane%2C_Coventry%2C_Geograph_7417579_by_Jo_and_Steve_Turner.jpg" alt="St Mary's Guildhall Coventry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=St+Marys+Guildhall'">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/St_Mary%27s_Guildhall%2C_Bayley_Lane%2C_Coventry%2C_Geograph_7417579_by_Jo_and_Steve_Turner.jpg" alt="St Mary's Guildhall Coventry" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f382c/ffffff?text=St+Marys+Guildhall'">
                         <span class="absolute top-3 left-3 bg-emerald-900 text-gold-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Dec 2027</span>
                     </div>
                     <h3 class="text-xl font-serif font-bold text-emerald-900 mb-2">Tying The Knot</h3>
@@ -378,7 +239,7 @@
                                 <i class="fa-solid fa-square-parking text-gold-400 mt-1"></i>
                                 <div>
                                     <strong class="block text-white">Parking:</strong>
-                                    <span>Salt Lane Car Park (CV1 2GY) &amp; Cox Street Car Park are a 3-minute walk away.</span>
+                                    <span>Salt Lane Car Park (CV1 2GY) and Cox Street Car Park are nearby. Check current availability, charges and access arrangements before travelling.</span>
                                 </div>
                             </li>
                             <li class="flex items-start gap-3">
@@ -394,12 +255,15 @@
                             <a href="https://maps.google.com/?q=St+Marys+Guildhall+Coventry+Bayley+Lane" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-gold-400 hover:bg-gold-500 text-emerald-900 font-bold rounded-full text-xs uppercase tracking-widest transition-all">
                                 <i class="fa-solid fa-map-location-dot"></i> Open Location in Google Maps
                             </a>
+                            <a href="https://www.stmarysguildhall.co.uk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 mt-3 sm:mt-0 sm:ml-2 border border-gold-300/60 hover:bg-white/10 text-white font-bold rounded-full text-xs uppercase tracking-widest transition-all">
+                                Venue information
+                            </a>
                         </div>
                     </div>
 
                     <!-- Venue Visual Preview -->
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-gold-400/30 h-80 lg:h-full min-h-[320px]">
-                        <img src="https://images.unsplash.com/photo-1545232979-fbf34fe37b38?q=80&w=1000&auto=format&fit=crop" alt="St Mary's Guildhall Hall" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f382c/ffffff?text=St+Marys+Guildhall'">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/St_Mary%27s_Guildhall%2C_Bayley_Lane%2C_Coventry%2C_Geograph_7417579_by_Jo_and_Steve_Turner.jpg" alt="St Mary's Guildhall in Coventry" loading="lazy" decoding="async" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-transparent to-transparent flex items-end p-6">
                             <span class="text-xs text-gold-200 uppercase tracking-widest font-semibold"><i class="fa-solid fa-snowflake mr-1"></i> The Great Hall &amp; Tales of Coventry History</span>
                         </div>
@@ -515,8 +379,37 @@
                     <h2 class="text-4xl sm:text-5xl font-serif font-normal text-emerald-900 mt-1">Accommodation &amp; Travel</h2>
                     <div class="gold-divider"></div>
                     <p class="text-emerald-900/80 text-sm sm:text-base">
-                        For guests traveling to Coventry, here are top recommended nearby hotels within walking distance of St Mary's Guildhall.
+                        Find travel links and a few places to stay. Check routes, availability, prices and accessibility directly before booking.
                     </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-train text-burgundy-900 text-xl" aria-hidden="true"></i>
+                            <h3 class="text-xl font-serif font-bold text-emerald-900">By train</h3>
+                        </div>
+                        <p class="text-emerald-900/80 text-sm leading-relaxed mb-4">Plan your journey to Coventry Station and check the timetable for your travel date.</p>
+                        <a href="https://www.nationalrail.co.uk/stations/cov/" target="_blank" rel="noopener noreferrer" class="block text-xs font-bold text-burgundy-900 hover:text-gold-600 uppercase tracking-wider mb-3">Coventry station information <i class="fa-solid fa-arrow-up-right-from-square ml-1" aria-hidden="true"></i></a>
+                        <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Coventry+Railway+Station&amp;destination=St+Mary%27s+Guildhall%2C+Bayley+Lane%2C+Coventry&amp;travelmode=transit" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-600 uppercase tracking-wider">Transit directions to the venue <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-square-parking text-burgundy-900 text-xl" aria-hidden="true"></i>
+                            <h3 class="text-xl font-serif font-bold text-emerald-900">By car</h3>
+                        </div>
+                        <p class="text-emerald-900/80 text-sm leading-relaxed mb-4">Nearby options include Salt Lane (CV1 2GY) and Cox Street car parks. Check current charges, opening times and availability.</p>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Salt+Lane+Car+Park%2C+Coventry" target="_blank" rel="noopener noreferrer" class="block text-xs font-bold text-burgundy-900 hover:text-gold-600 uppercase tracking-wider mb-3">Salt Lane directions <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Cox+Street+Car+Park%2C+Coventry" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-600 uppercase tracking-wider">Cox Street directions <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-bus text-burgundy-900 text-xl" aria-hidden="true"></i>
+                            <h3 class="text-xl font-serif font-bold text-emerald-900">Local transport</h3>
+                        </div>
+                        <p class="text-emerald-900/80 text-sm leading-relaxed mb-4">Use the local journey planner for bus routes and check service changes closer to the wedding.</p>
+                        <a href="https://www.tfwm.org.uk/plan-your-journey/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-600 uppercase tracking-wider">Transport for West Midlands journey planner <i class="fa-solid fa-arrow-up-right-from-square ml-1" aria-hidden="true"></i></a>
+                    </div>
                 </div>
 
                 <!-- Recommended Hotels Grid -->
@@ -524,40 +417,43 @@
                     <!-- Hotel 1 -->
                     <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/30 flex flex-col justify-between">
                         <div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider bg-gold-200 text-emerald-900 px-3 py-1 rounded-full">2 Mins Walk</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-gold-200 text-emerald-900 px-3 py-1 rounded-full">City-centre option</span>
                             <h3 class="text-2xl font-serif font-bold text-emerald-900 mt-3 mb-1">The Telegraph Hotel</h3>
                             <p class="text-emerald-900/70 text-xs mb-3">Corporation Street, Coventry CV1 1GS</p>
                             <p class="text-emerald-900/80 text-xs leading-relaxed mb-4">
                                 Luxury mid-century boutique hotel right in Coventry city center, located just around the corner from the Guildhall.
                             </p>
                         </div>
-                        <a href="https://www.telegraphhotel.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider">Book Telegraph Hotel <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        <a href="https://www.google.com/maps/dir/?api=1&amp;origin=St+Mary%27s+Guildhall%2C+Coventry&amp;destination=The+Telegraph+Hotel%2C+Coventry&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" class="block text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider mb-3">Walking directions <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
+                        <a href="https://www.telegraphhotel.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider">Hotel website <i class="fa-solid fa-arrow-up-right-from-square ml-1" aria-hidden="true"></i></a>
                     </div>
 
                     <!-- Hotel 2 -->
                     <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/30 flex flex-col justify-between">
                         <div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-3 py-1 rounded-full">5 Mins Walk</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-3 py-1 rounded-full">City-centre option</span>
                             <h3 class="text-2xl font-serif font-bold text-emerald-900 mt-3 mb-1">Premier Inn City Centre</h3>
                             <p class="text-emerald-900/70 text-xs mb-3">Earl Street, Coventry CV1 5RU</p>
                             <p class="text-emerald-900/80 text-xs leading-relaxed mb-4">
                                 Convenient and modern budget hotel located extremely close to Bayley Lane and the Cathedral Quarter.
                             </p>
                         </div>
-                        <a href="https://www.premierinn.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider">Book Premier Inn <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        <a href="https://www.google.com/maps/dir/?api=1&amp;origin=St+Mary%27s+Guildhall%2C+Coventry&amp;destination=Premier+Inn+Coventry+City+Centre+Earl+Street&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" class="block text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider mb-3">Walking directions <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
+                        <a href="https://www.premierinn.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider">Hotel website <i class="fa-solid fa-arrow-up-right-from-square ml-1" aria-hidden="true"></i></a>
                     </div>
 
                     <!-- Hotel 3 -->
                     <div class="bg-white rounded-3xl p-6 shadow-md border border-gold-400/30 flex flex-col justify-between">
                         <div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider bg-burgundy-100 text-burgundy-900 px-3 py-1 rounded-full">15 Mins Drive</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-burgundy-100 text-burgundy-900 px-3 py-1 rounded-full">Country-house option</span>
                             <h3 class="text-2xl font-serif font-bold text-emerald-900 mt-3 mb-1">Coombe Abbey Hotel</h3>
                             <p class="text-emerald-900/70 text-xs mb-3">Brinklow Road, Binley, Coventry CV3 2AB</p>
                             <p class="text-emerald-900/80 text-xs leading-relaxed mb-4">
                                 Historic countryside abbey estate hotel for those seeking a country house stay near Coventry.
                             </p>
                         </div>
-                        <a href="https://www.coombeabbey.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider">Book Coombe Abbey <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        <a href="https://www.google.com/maps/dir/?api=1&amp;origin=St+Mary%27s+Guildhall%2C+Coventry&amp;destination=Coombe+Abbey+Hotel%2C+Coventry&amp;travelmode=driving" target="_blank" rel="noopener noreferrer" class="block text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider mb-3">Driving directions <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
+                        <a href="https://www.coombeabbey.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-burgundy-900 hover:text-gold-500 uppercase tracking-wider">Hotel website <i class="fa-solid fa-arrow-up-right-from-square ml-1" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -572,7 +468,10 @@
             <p class="text-emerald-900/80 text-sm sm:text-base mb-8">
                 Please submit your response by <strong>31st October 2027</strong>.
             </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfohODQFBDMttFGCHMji8flaneZPKWEZui2wnDuV_sK03oNlA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-burgundy-900 hover:bg-emerald-900 text-white font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow-lg">
+            <p class="text-emerald-900/80 text-sm leading-relaxed mb-8">
+                The form emails a copy of your responses to the address you provide. Keep that email as your record of your reply.
+            </p>
+            <a href="https://forms.gle/fxfyzKuse4TSMHWV7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-burgundy-900 hover:bg-emerald-900 text-white font-bold rounded-full uppercase text-xs tracking-widest transition-all shadow-lg">
                 <i class="fa-solid fa-clipboard-list text-gold-300"></i> Respond via Google Forms
             </a>
         </div>
@@ -620,7 +519,7 @@
                         </span>
                     </summary>
                     <p class="mt-4 text-sm text-emerald-900/80 leading-relaxed">
-                        Yes, St Mary's Guildhall has full step-free wheelchair accessibility and lift access throughout the main areas.
+                        Access arrangements can vary by space and event. Please check the venue's current accessibility information and contact the venue directly about any individual requirements before travelling. <a class="font-semibold underline underline-offset-2" href="https://www.stmarysguildhall.co.uk/" target="_blank" rel="noopener noreferrer">Visit the venue website</a>.
                     </p>
                 </details>
             </div>
@@ -638,15 +537,15 @@
             </p>
             <div class="gold-divider"></div>
             <p class="text-xs text-cream/60">
-                Created for Michael Simmons &amp; Vita son to be Simmons
+                With love, Michael &amp; Vita
             </p>
         </div>
     </footer>
 
     <!-- JavaScript Logic -->
     <script>
-        // Wedding Date: December 4, 2027 at 14:00:00
-        const weddingDate = new Date('December 4, 2027 14:00:00').getTime();
+        // Guest arrival is 1:30 PM GMT; the ceremony begins at 2:00 PM.
+        const weddingDate = Date.parse('2027-12-04T13:30:00+00:00');
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -696,12 +595,15 @@
 
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            menuIcon.className = mobileMenu.classList.contains('hidden') ? "fa-solid fa-bars text-2xl" : "fa-solid fa-xmark text-2xl";
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            menuBtn.setAttribute('aria-expanded', String(isOpen));
+            menuIcon.className = isOpen ? "fa-solid fa-xmark text-2xl" : "fa-solid fa-bars text-2xl";
         });
 
         document.querySelectorAll('.mobile-nav-item').forEach(item => {
             item.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
                 menuIcon.className = "fa-solid fa-bars text-2xl";
             });
         });
@@ -711,15 +613,20 @@
             const icsData = [
                 'BEGIN:VCALENDAR',
                 'VERSION:2.0',
+                'PRODID:-//Michael and Vita//Wedding Invitation//EN',
+                'CALSCALE:GREGORIAN',
                 'BEGIN:VEVENT',
+                'UID:michael-vita-wedding-20271204@wedding',
+                `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '')}`,
                 'SUMMARY:Michael & Vita Wedding',
-                'DESCRIPTION:Michael Simmons & Vita Grigaraviciute Wedding at St Marys Guildhall Coventry.',
+                'DESCRIPTION:Michael and Vita wedding at St Marys Guildhall. Guest arrival at',
+                ' 1:30 PM; ceremony begins at 2:00 PM.',
                 'LOCATION:St Marys Guildhall, Bayley Ln, Coventry CV1 5RN',
-                'DTSTART:20271204T140000Z',
-                'DTEND:20271204T230000Z',
+                'DTSTART:20271204T133000Z',
+                'DTEND:20271205T000000Z',
                 'END:VEVENT',
                 'END:VCALENDAR'
-            ].join('\n');
+            ].join('\r\n');
 
             const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
             const link = document.createElement('a');

@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-emerald-deep: #0f382c;
+  --color-burgundy: #5c1323;
+  --color-gold: #d4af37;
+  --color-cream: #fdfbf7;
+  --color-text-dark: #1e2421;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-text-dark);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #aa8236;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 60;
+  transform: translateY(-200%);
+  border-radius: 9999px;
+  background: #fdfbf7;
+  padding: 0.75rem 1rem;
+  color: #0f382c;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.winter-hero-bg {
+  background-image:
+    linear-gradient(to bottom, rgba(15, 56, 44, 0.75), rgba(61, 12, 21, 0.85)),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.glass-header {
+  background: rgba(253, 251, 247, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-link.active {
+  color: #c5a059;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 2px;
+  margin: 2px auto 0;
+  border-radius: 2px;
+  background-color: #d4af37;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdfbf7;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #0f382c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5c1323;
+}
+
+.gold-divider {
+  width: 140px;
+  height: 2px;
+  margin: 1rem auto;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+.snowfall {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  top: -20px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--snow-size, 14px);
+  animation: snowfall var(--snow-duration, 12s) linear var(--snow-delay, 0s) infinite;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(0, -20px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(var(--snow-drift, 30px), 100vh, 0) rotate(360deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .winter-hero-bg {
+    background-attachment: scroll;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .snowflake {
+    display: none;
+    animation: none;
+  }
+}
