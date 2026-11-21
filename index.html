@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael &amp; Vita — Winter Wedding at St Mary's Guildhall</title>
+    <title>Michael &amp; Vita — Christmas Wedding at St Mary's Guildhall</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -131,9 +131,34 @@
         details summary::-webkit-details-marker {
             display: none;
         }
+
+        /* Subtle falling snow for the Christmas celebration */
+        .snowfall {
+            position: fixed;
+            inset: 0;
+            z-index: 40;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .snowflake {
+            position: absolute;
+            top: -20px;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: var(--snow-size, 14px);
+            animation: snowfall var(--snow-duration, 12s) linear var(--snow-delay, 0s) infinite;
+            text-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
+        }
+        @keyframes snowfall {
+            0% { transform: translate3d(0, -20px, 0) rotate(0deg); }
+            100% { transform: translate3d(var(--snow-drift, 30px), 100vh, 0) rotate(360deg); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .snowflake { animation: none; display: none; }
+        }
     </style>
 </head>
 <body class="relative antialiased selection:bg-gold-200 selection:text-emerald-900">
+    <div id="snowfall" class="snowfall" aria-hidden="true"></div>
 
     <!-- Sticky Navigation Bar -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-header border-b border-gold-400/20 shadow-sm">
@@ -185,9 +210,9 @@
    <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center winter-hero-bg pt-24 pb-16 px-4 text-white text-center">
         <div class="relative z-10 max-w-4xl mx-auto space-y-6">
-            <!-- Winter Accent Subtitle -->
+            <!-- Christmas Accent Subtitle -->
             <div class="flex items-center justify-center gap-2 text-gold-300 font-script text-3xl sm:text-4xl">
-                <span>Winter Wedding Celebration</span>
+                <span>A Christmas Wedding Celebration</span>
             </div>
 
             <!-- Couple Names -->
@@ -202,13 +227,13 @@
 
             <!-- Wedding Date & Venue Location -->
             <p class="text-base sm:text-xl font-light tracking-widest uppercase text-cream/90 max-w-2xl mx-auto">
-                Saturday, 12th December 2027<br>
+                Saturday, 4th December 2027<br>
                 <span class="text-gold-300 font-normal">St Mary's Guildhall • Coventry, UK</span>
             </p>
 
             <!-- Live Countdown Timer Component -->
             <div class="pt-6 pb-4">
-                <p class="text-xs uppercase tracking-widest text-gold-300 mb-4 font-bold">Counting Down To Our Winter Wedding</p>
+                <p class="text-xs uppercase tracking-widest text-gold-300 mb-4 font-bold">Counting Down To Our Christmas Wedding</p>
                 <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
                     <div class="bg-emerald-900/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-gold-400/40 shadow-lg">
                         <span id="timer-days" class="block text-2xl sm:text-4xl font-serif font-bold text-white">00</span>
@@ -360,7 +385,7 @@
                                 <i class="fa-solid fa-vest text-gold-400 mt-1"></i>
                                 <div>
                                     <strong class="block text-white">Dress Code:</strong>
-                                    <span>Winter Formal / Cocktail Attire</span>
+                                    <span>Christmas Formal / Cocktail Attire</span>
                                 </div>
                             </li>
                         </ul>
@@ -390,7 +415,7 @@
                 <h2 class="text-4xl sm:text-5xl font-serif font-normal text-emerald-900 mt-1">Wedding Day Schedule</h2>
                 <div class="gold-divider"></div>
                 <p class="text-emerald-900/80 text-sm sm:text-base">
-                    Saturday, 12th December 2027 — Here is what we have planned for our celebration.
+                    Saturday, 4th December 2027 — Here is what we have planned for our Christmas celebration.
                 </p>
             </div>
 
@@ -583,7 +608,7 @@
                         </span>
                     </summary>
                     <p class="mt-4 text-sm text-emerald-900/80 leading-relaxed">
-                        Winter Formal / Cocktail Attire. Suits and ties for gentlemen, and elegant cocktail or evening dresses for ladies.
+                        Christmas Formal / Cocktail Attire. Suits and ties for gentlemen, and elegant festive cocktail or evening dresses for ladies.
                     </p>
                 </details>
 
@@ -609,19 +634,19 @@
                 Michael &amp; Vita
             </a>
             <p class="text-xs uppercase tracking-widest text-gold-200">
-                12th December 2027 • St Mary's Guildhall, Coventry
+                4th December 2027 • St Mary's Guildhall, Coventry
             </p>
             <div class="gold-divider"></div>
             <p class="text-xs text-cream/60">
-                Created for Michael Simmons &amp; Vita Grigaraviciute • Ready to host on GitHub Pages
+                Created for Michael Simmons &amp; Vita son to be Simmons
             </p>
         </div>
     </footer>
 
     <!-- JavaScript Logic -->
     <script>
-        // Wedding Date: December 12, 2027 at 14:00:00
-        const weddingDate = new Date('December 12, 2027 14:00:00').getTime();
+        // Wedding Date: December 4, 2027 at 14:00:00
+        const weddingDate = new Date('December 4, 2027 14:00:00').getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -649,6 +674,21 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
+        // Create a light, unobtrusive snowfall across the page.
+        const snowfall = document.getElementById('snowfall');
+        const snowflakeCount = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 32;
+        for (let i = 0; i < snowflakeCount; i++) {
+            const flake = document.createElement('span');
+            flake.className = 'snowflake';
+            flake.textContent = i % 4 === 0 ? '❄' : '•';
+            flake.style.left = `${Math.random() * 100}%`;
+            flake.style.setProperty('--snow-size', `${8 + Math.random() * 12}px`);
+            flake.style.setProperty('--snow-duration', `${8 + Math.random() * 10}s`);
+            flake.style.setProperty('--snow-delay', `${-Math.random() * 18}s`);
+            flake.style.setProperty('--snow-drift', `${-60 + Math.random() * 120}px`);
+            snowfall.appendChild(flake);
+        }
+
         // Mobile Menu Drawer Toggle
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -675,8 +715,8 @@
                 'SUMMARY:Michael & Vita Wedding',
                 'DESCRIPTION:Michael Simmons & Vita Grigaraviciute Wedding at St Marys Guildhall Coventry.',
                 'LOCATION:St Marys Guildhall, Bayley Ln, Coventry CV1 5RN',
-                'DTSTART:20271212T133000Z',
-                'DTEND:20271213T000000Z',
+                'DTSTART:20271204T140000Z',
+                'DTEND:20271204T230000Z',
                 'END:VEVENT',
                 'END:VCALENDAR'
             ].join('\n');
